@@ -1,0 +1,18 @@
+<meta charset = "utf-8"> 
+<script src = "Caja.js"></script>
+<script src = "Elementos.js"></script>
+<script>
+    lista = new ListaEnlazada(); 
+
+    console.group("Elementos agregados a la lista");
+    lista.agregarElemento(new Lapiz("Azul","Punta Fina","Bic"));
+    lista.agregarElemento(new Corrector("Lápiz", "Bic", "Blanco"));
+    lista.agregarElemento(new Resma("Legal","Life is Life"));
+    lista.agregarElemento(new Grapadora("Manual", "Grapa Pequeña","Verde","Pequeña"));
+    lista.agregarElemento(new Clips("Pequeño", "Amarillo", "Limón"));
+    console.log(lista);
+    console.groupEnd();
+
+    lista.guardar();
+    console.log(lista);
+</script>
