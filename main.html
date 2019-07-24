@@ -1,22 +1,20 @@
 <meta charset="utf-8">
-<script src="Caja.js"></script>
-<script src="Lapiz.js"></script>
-
+<script src="ListaObjeto.js"></script>
+<script src="ListaAlmacen.js"></script>
+<script src="Elementos.js"></script>
 <script>
-    caja = new ListaEnlazadaCaja();
-
-    console.group("antes de agregar");
-        caja.verContenidoCaja();
-    console.groupEnd();
+    caja = new ListaEnlazada();
+    almacen = new ListaEnlazadaAlmacen();
 
     console.group("Despues de agregar");
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
-        caja.verContenidoCaja();
+        max=0;
+        if(max<5){
+            caja.agregar(new Lapiz("Rojo", "hb","pilot"));
+            caja.agregar(new Corrector("Lapiz", "hb","blanco"));
+            caja.agregar(new Borrador("Rojo", "hb","goma","mediano"));
+
+            almacen.agregarCaja(caja);
+        }
+        almacen.verContenidoAlmacen();
     console.groupEnd();
 </script>
