@@ -1,34 +1,43 @@
-function Node(valor){
+
+function Nodo(valor){
+
     this.valor = valor;
-    this.siguiente = null;
+    this.siguiente=null;
 }
-function ListaEnlazadaCaja(){
+
+function ListaEnlazada(){
     this.primero = null;
-    this.esVacia = ListaEnlazadaCajaEsVacia;
-    this.agregarObjeto = ListaEnlazadaCajaAgregarObjeto;
-    this.verContenidoCaja = ListaEnlazadaCajaVerContenidoCaja;  
+    this.agregarElemento= ListaEnlazadaAgregarElemento;
+    this.guardar = ListaEnlazadaGuardar;
 }
-    function ListaEnlazadaCajaEsVacia(){
-      return  this.primero == null;
+
+function ListaEnlazadaAgregarElemento(valor){
+    if(!this.primero){
+        this.primero = new Nodo(valor);
+    }else{
+        actual = this.primero;
+        this.primero = new Nodo(valor); 
+        this.primero.siguiente = actual; 
     }
-    function ListaEnlazadaCajaAgregarObjeto(objeto){
-        if(this.esVacia()){
-            this.primero = new Node(objeto);
-        }else{
-            resto = this.primero;
-            this.primero = new Node(objeto);
-            this.primero.siguiente = resto;
+
+}
+
+function ListaEnlazadaGuardar(){
+    var lista1 = this.agregarElemento;
+    var lista = [];
+    lista.forEach(function(i){
+        alert(i);
+    });
+
+    lista = [lista1];
+    lista.pop();
+
+    var fs = require('fs'); 
+    fs.writeFile("Nuevo.txt", lista, function(err){
+        if(err){
+            return console.log(err); 
         }
-    }
-    function ListaEnlazadaCajaVerContenidoCaja(){
-        if(!this.esVacia()){
-            actual = this.primero;
-            while(actual.siguiente){
-                console.log(actual.valor);
-                actual = actual.siguiente;
-            }
-            console.log(actual.valor);
-        }else{
-            console.log("la lista esta vacia, no hay nada que mostrar");
-        }
-    }
+        console.log("Elarchivo fue creado de una manera exitosa. ");
+    });
+
+}
