@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<script src="Caja.js"></script>
+<script src="Lapiz.js"></script>
+
+<script>
+    caja = new ListaEnlazadaCaja();
+
+    console.group("antes de agregar");
+        caja.verContenidoCaja();
+    console.groupEnd();
+
+    console.group("Despues de agregar");
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.agregarObjeto(new Lapiz("HB", "Pentel"));
+        caja.verContenidoCaja();
+    console.groupEnd();
+</script>
